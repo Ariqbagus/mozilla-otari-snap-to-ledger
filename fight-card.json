@@ -1,0 +1,210 @@
+{
+  "schema_version": 2,
+  "request_timing": "includes_failed_requests",
+  "generated_at": "2026-11-26T02:11:00+00:00",
+  "dataset": {
+    "seed": 20261120,
+    "preset": "medium",
+    "rows": 50,
+    "messy_rows": 63,
+    "sha256": "f244b6558da5"
+  },
+  "machine": {
+    "os": "Linux 6.18.55+",
+    "arch": "x86_64",
+    "python": "3.13.18",
+    "cpu": "AMD EPYC 7B12",
+    "ram_gb": 31,
+    "gpu": "none detected",
+    "gpu_note": ""
+  },
+  "gateway": {
+    "otari_url": "http://localhost:8000",
+    "otari_version": "unknown",
+    "ollama_version": "0.40.18",
+    "ollama_url_from_docker": "http://127.0.0.1:11434",
+    "integrity": {
+      "referee": {
+        "code_sha256": "f8ffb651e804",
+        "git": "c90c3df",
+        "files": [
+          "corrupt.py",
+          "grade.py",
+          "pipeline.py",
+          "referee.py",
+          "team.py",
+          "card.py",
+          "otari.py",
+          "integrity.py"
+        ]
+      },
+      "model_digests": {
+        "qwen2.5:3b": "357c53fb659c"
+      },
+      "prompt_bytes": {
+        "team": 5776,
+        "stock": 1746
+      },
+      "prompt_leaks": {
+        "team": [],
+        "stock": []
+      }
+    }
+  },
+  "stock": {
+    "name": "stock",
+    "file": "teams/stock.yml",
+    "sha256": "13571dac3037",
+    "models": [
+      "qwen2.5:3b"
+    ],
+    "repair_pct": 48.9,
+    "problems": 88,
+    "fixed": 50,
+    "broken": 7,
+    "accuracy_pct": 82.4,
+    "per_column_repair_pct": {
+      "date": 79.2,
+      "vendor": 52.4,
+      "amount": 72.2,
+      "category": 26.3,
+      "note": 33.3
+    },
+    "dup_kept": 0,
+    "dropped": 0,
+    "junk_kept": 1,
+    "rows_out": 51,
+    "seconds": 983.9,
+    "requests": 14,
+    "unparsed_rows": 26,
+    "failed_requests": 0,
+    "refused_drops": 32,
+    "weights_gb": 1.93,
+    "repair_per_gb": 25.3,
+    "local_requests_pct": 100.0,
+    "otari_usage": {
+      "requests": 14,
+      "errors": 0,
+      "prompt_tokens": 19868,
+      "completion_tokens": 6934,
+      "avg_gateway_latency_ms": 70242,
+      "cost_usd": 0.0
+    },
+    "stages": [
+      {
+        "name": "clean",
+        "model": "qwen2.5:3b",
+        "requests": 7,
+        "rows": 63,
+        "seconds": 483.1,
+        "unparsed": 23,
+        "failed_requests": 0,
+        "local_requests": 7,
+        "prompt_tokens": 10462,
+        "completion_tokens": 3350,
+        "token_share_pct": 51.5,
+        "time_share_pct": 49.1,
+        "provider_requests": {
+          "ollama": 7
+        }
+      },
+      {
+        "name": "check",
+        "model": "qwen2.5:3b",
+        "requests": 7,
+        "rows": 62,
+        "seconds": 500.8,
+        "unparsed": 3,
+        "failed_requests": 0,
+        "local_requests": 7,
+        "prompt_tokens": 9406,
+        "completion_tokens": 3584,
+        "token_share_pct": 48.5,
+        "time_share_pct": 50.9,
+        "provider_requests": {
+          "ollama": 7
+        }
+      }
+    ]
+  },
+  "team": {
+    "name": "snap-to-ledger",
+    "file": "team.yml",
+    "sha256": "b596ddf68f76",
+    "models": [
+      "qwen2.5:3b"
+    ],
+    "repair_pct": 73.9,
+    "problems": 88,
+    "fixed": 70,
+    "broken": 5,
+    "accuracy_pct": 90.8,
+    "per_column_repair_pct": {
+      "date": 75.0,
+      "vendor": 66.7,
+      "amount": 94.4,
+      "category": 89.5,
+      "note": 66.7
+    },
+    "dup_kept": 0,
+    "dropped": 0,
+    "junk_kept": 0,
+    "rows_out": 50,
+    "seconds": 1180.1,
+    "requests": 28,
+    "unparsed_rows": 2,
+    "failed_requests": 0,
+    "refused_drops": 37,
+    "weights_gb": 1.93,
+    "repair_per_gb": 38.3,
+    "local_requests_pct": 100.0,
+    "otari_usage": {
+      "requests": 28,
+      "errors": 0,
+      "prompt_tokens": 47917,
+      "completion_tokens": 8142,
+      "avg_gateway_latency_ms": 42110,
+      "cost_usd": 0.0
+    },
+    "stages": [
+      {
+        "name": "clean",
+        "model": "qwen2.5:3b",
+        "requests": 13,
+        "rows": 63,
+        "seconds": 535.4,
+        "unparsed": 2,
+        "failed_requests": 0,
+        "local_requests": 13,
+        "prompt_tokens": 24445,
+        "completion_tokens": 3613,
+        "token_share_pct": 50.1,
+        "time_share_pct": 45.4,
+        "provider_requests": {
+          "ollama": 13
+        }
+      },
+      {
+        "name": "check",
+        "model": "qwen2.5:3b",
+        "requests": 15,
+        "rows": 51,
+        "seconds": 644.8,
+        "unparsed": 0,
+        "failed_requests": 0,
+        "local_requests": 15,
+        "prompt_tokens": 23472,
+        "completion_tokens": 4529,
+        "token_share_pct": 49.9,
+        "time_share_pct": 54.6,
+        "provider_requests": {
+          "ollama": 15
+        }
+      }
+    ]
+  },
+  "result": {
+    "delta_points": 25.0,
+    "winner": "snap-to-ledger"
+  }
+}

@@ -1,0 +1,22 @@
+# snap-to-ledger: one small model, two disciplined passes.
+# clean does the repair with the full lookup tables in its prompt (every vendor,
+# every category synonym, every date and amount form the generator produces).
+# check is a real verify stage: it re-reads every row against the same tables
+# and the clean sample, fixes what is still wrong, and flags guesses so the
+# retry pass takes one more look at exactly those rows.
+# One model (qwen2.5:3b, 1.93 GB) keeps net repair per GB high; batch 5 keeps
+# replies short enough that a 3B model does not lose rows.
+name: snap-to-ledger
+stages:
+  - name: clean
+    type: map
+    model: qwen2.5:3b
+    batch: 5
+    prompt: prompts/clean.md
+
+  - name: check
+    type: verify
+    model: qwen2.5:3b
+    batch: 5
+    retry: 1
+    prompt: prompts/check.md
